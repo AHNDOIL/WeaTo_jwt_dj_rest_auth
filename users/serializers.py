@@ -60,7 +60,6 @@ class LoginSerializer(serializers.ModelSerializer):
             'tokens' : user.tokens
         }
         
-        return super().validate(instance)
 
 
 class LogoutSerializer(serializers.Serializer):

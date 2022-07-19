@@ -1,10 +1,6 @@
-from django.urls import path
-from .views import CustomUserCreate, LoginAPIView, LogoutAPIView
-
-app_name = 'users'
+from django.urls import path, include
 
 urlpatterns = [
-    path('register/', CustomUserCreate.as_view(), name='create_user'),
-    path('login/', LoginAPIView.as_view(), name='login'),
-    path('logout/', LogoutAPIView.as_view(), name='logout'),
+    path('register/', include('dj_rest_auth.registration.urls')),
+    path('', include('dj_rest_auth.urls')),
 ]
